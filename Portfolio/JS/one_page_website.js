@@ -1,40 +1,37 @@
-// Open the Modal
-function openModal() {
-    document.getElementById("myModal").style.display = "block";
+// These functions open and close the contact form
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
 }
 
-// Close the Modal
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
 }
 
+//This function displays the first image in the slideshow when the page loads
 var slideIndex = 1;
 showSlides(slideIndex);
 
-//Next/previous controls
+//This function changes the slide when the left or right arrows are clicked
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-//Thumbnail image controls
+//This function changes the slide when the dots are clicked
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-function showSlides (n) {
-    var i;
+function showSlides(n) {
     var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    var captionText = document.getElementById("caption");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1};
+    if (n < 1) {slideIndex = slides.length};
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+        dots[i].className = dots[i].className.replace
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
